@@ -12,12 +12,11 @@ export function protect(req, res, next) {
             token = req.headers.authorization.split(" ")[1];
             // verify token
             const decoded = jwt.verify(token, ENV.JWT_KEY);
-            console.log(decoded);
             if (decoded.data[0]) {
                 req.idUser = decoded.data[0];
             }
-            console.log(req.idUser);
             next();
+            return;
         } catch {
             res.status(401).json("No Autorizado");
             return;
