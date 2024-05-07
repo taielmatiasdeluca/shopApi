@@ -17,8 +17,7 @@ Este conjunto de endpoints permite la autenticacion a la aplicacion y es el unic
 
 
 #### /api/auth/register ####
-Se consume en metodo **POST**, necesita los siguientes parametros en el body en forma json raw.
-\n
+Se consume en metodo **POST**, necesita los siguientes parametros en el body en forma json raw.  
 `
 {
     "email":"<string>",
@@ -71,7 +70,7 @@ Se consume en metodo **GET**, necesita los siguientes parametros
 
 
 #### /api/product/suppliers/:id ####
-Se consume en metodo **GET**, necesita los siguientes parametros
+Se consume en metodo **GET**, necesita los siguientes parametros  
 :id = id del producto a obtener los proovedores.
 
 
