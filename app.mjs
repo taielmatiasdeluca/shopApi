@@ -1,19 +1,25 @@
 import express, { Router } from 'express';
 import cors from 'cors';
-
 //Routes
 import authRouter from './routes/auth.route.mjs';
-
+import productRouter from './routes/product.route.mjs';
+import supplieRouter from './routes/supplier.route.mjs';
+//Jwt protection
+import protect from './middleware/auth.mjs';
 
 const app = express();
-//Enable cors
+
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//Routes
-
+//Routes without jwt protection
 app.use('/api/auth', authRouter);
+//Routes with jwt
+app.use('/api/product', protect, productRouter);
+app.use('/api/supplier', protect, supplieRouter);
+
+
 
 //Api not found
 app.use('*', Router().all('', (req, res) => {
