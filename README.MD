@@ -1,6 +1,5 @@
-# SHOPAPI
-Este proyecto es una api fullrest aplicada, simulando una tienda y sus posibles usos.  
-
+# ShopApi
+Este proyecto elaborado integramente por mi, simula el backend necesario para un contro de productos, con proovedores y autenticacion por medio de jwt, se utilizo **ExpressJs** para desarollarlo enteramente.
 ## Tegnologias ##
 Se usara nodejs, junto con express, mysql, y jwt para la autenticacion de cuentas    
 
@@ -70,7 +69,7 @@ Se consume en metodo **GET**, necesita los siguientes parametros
 
 
 #### /api/product/suppliers/:id ####
-Se consume en metodo **GET**, necesita los siguientes parametros  
+Se consume en metodo **GET**, necesita los siguientes parametros   
 :id = id del producto a obtener los proovedores.
 
 
