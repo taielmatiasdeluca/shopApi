@@ -18,6 +18,7 @@ Este conjunto de endpoints permite la autenticacion a la aplicacion y es el unic
 
 ### /api/auth/register ###
 Se consume en metodo **POST**, necesita los siguientes parametros en el body en forma json raw.
+
 `
 {
     "email":"<example>",
@@ -27,6 +28,7 @@ Se consume en metodo **POST**, necesita los siguientes parametros en el body en 
 
 ### /api/auth/login ###
 Se consume en metodo **POST**, necesita los siguientes parametros en el body en forma json raw.
+s
 `
 {
     "email":"<example>",
