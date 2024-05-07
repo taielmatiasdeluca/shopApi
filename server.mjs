@@ -1,7 +1,5 @@
-import { configDotenv } from 'dotenv'
 import app from './app.mjs';
-
-const ENV = configDotenv().parsed;
+import { ENV } from './config/config.mjs';
 
 const server = app.listen(ENV.PORT, () => {
     console.log(`Server listening on: ${ENV.PORT}`)

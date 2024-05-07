@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth', authRouter);
 
 //Api not found
-app.use('*', Router().get('', (req, res) => {
+app.use('*', Router().all('', (req, res) => {
     res.status(404).json("Api no encontrada");
 }));
 

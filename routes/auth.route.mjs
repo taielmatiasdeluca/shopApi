@@ -1,12 +1,12 @@
 import { Router } from "express";
 
-import { hi, init } from '../controller/auth.mjs';
+import { login, register } from '../controller/auth.mjs';
 
 //Main router
 export const router = Router();
 
 //Routes
-router.get('/me', hi);
-router.get('/', init);
+router.post('/register', register);
+router.post('/login', login);
 
 export default router;
