@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { deleteProduct, listAllProducts, listSuppliers, newProduct } from "../controller/product.mjs";
+import { deleteProduct, listAllProducts, listSuppliers, newProduct, getProduct } from "../controller/product.mjs";
 
 
 //Main router
@@ -9,6 +9,7 @@ export const router = Router();
 router.post('/new', newProduct);
 router.get('/list/:page/:amount', listAllProducts);
 router.delete('/:id', deleteProduct);
+router.get('/:id', getProduct);
 router.get('/suppliers/:id', listSuppliers);
 
 
