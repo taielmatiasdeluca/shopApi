@@ -1,9 +1,11 @@
 import { Router } from "express";
+import { getSupplier, listProducts } from "../controller/supplier.mjs";
 
 //Main router
 export const router = Router();
 
 //Routes
-router.get('/', (req, res) => { res.status(200) })
+router.get('/listProducts/:id', listProducts);
+router.get('/:id', getSupplier);
 
 export default router;
