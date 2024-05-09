@@ -69,6 +69,7 @@ export async function updateProduct(req, res) {
     }
 
     let sql = `UPDATE  products SET ${name ? "name=? ," : ""} ${quantity ? "quantity=?," : ""}${unitPrice ? "unitPrice=?," : ""}${imageUrl ? "imageUrl=?, " : ""} WHERE id=?`;
+    //Remove last comma, to avoid sql error
     const lastComma = sql.lastIndexOf(',');
     sql = sql.slice(0, lastComma) + sql.slice(lastComma + 1);
     const values = [name, quantity, unitPrice, imageUrl, id].filter(item => item);
