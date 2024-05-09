@@ -67,6 +67,20 @@ Se consume en metodo **DELETE**, necesita los siguientes parametros
 Se consume en metodo **GET**, necesita los siguientes parametros  
 :id = id del producto a obtener.
 
+#### /api/product/:id ####
+Se consume en metodo **UPDATE**, necesita los siguientes parametros  
+:id = id del producto a obtener.
+y acepta un json raw en el cuerpo de la peticion con los siguientes campos posibles a modificar.
+`
+{
+    "name":"<string>",
+    "quantity":"<integrer>",
+     "imageUrl":"<string>",
+    "unitPrice":"<float>",
+}
+`
+
+
 
 #### /api/product/suppliers/:id ####
 Se consume en metodo **GET**, necesita los siguientes parametros   
