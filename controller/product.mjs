@@ -60,6 +60,34 @@ export async function deleteProduct(req, res) {
     });
 }
 
+export async function updateProduct(req, res) {
+    const { name, quantity, unitPrice, imageUrl } = req.body
+    const { id } = req.params;
+    if (!id) {
+        req.status(400).json("No se proporciono id");
+        return;
+    }
+
+    let sql = `UPDATE  products SET ${name ? "name=? ," : ""} ${quantity ? "quantity=?," : ""}${unitPrice ? "unitPrice=?," : ""}${imageUrl ? "imageUrl=?, " : ""} WHERE id=?`;
+    const lastComma = sql.lastIndexOf(',');
+    sql = sql.slice(0, lastComma) + sql.slice(lastComma + 1);
+    const values = [name, quantity, unitPrice, imageUrl, id].filter(item => item);
+    if (values.length == 1) {
+        res.status(400).json("no se envio ninguna propiedad a modificar");
+        return;
+    }
+
+    const mysql = new Mysql();
+    mysql.conexion.query(sql, values, (error) => {
+        if (error) {
+            console.log(`Error al ejecutar query ${error}`);
+            res.status(500).json("Error al obtener");
+            return;
+        }
+        res.status(200).json("Se edito con exito");
+    });
+}
+
 export async function getProduct(req, res) {
     const { id } = req.params;
     if (!id) {

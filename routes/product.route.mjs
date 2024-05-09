@@ -1,5 +1,12 @@
 import { Router } from "express";
-import { deleteProduct, listAllProducts, listSuppliers, newProduct, getProduct } from "../controller/product.mjs";
+import {
+    deleteProduct,
+    listAllProducts,
+    listSuppliers,
+    newProduct,
+    getProduct,
+    updateProduct,
+} from "../controller/product.mjs";
 
 
 //Main router
@@ -10,6 +17,7 @@ router.post('/new', newProduct);
 router.get('/list/:page/:amount', listAllProducts);
 router.delete('/:id', deleteProduct);
 router.get('/:id', getProduct);
+router.put('/:id', updateProduct);
 router.get('/suppliers/:id', listSuppliers);
 
 
